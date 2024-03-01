@@ -8,7 +8,6 @@ Este repositorio contiene un clon del popular servicio de música Spotify constr
 
 - Interfaz de usuario similar a Spotify.
 - Reproducción de música.
-- Funcionalidades de búsqueda, playlists y perfiles de usuario.
 - Diseño adaptable a diferentes dispositivos (responsive design).
 
 ## Tecnologías utilizadas
