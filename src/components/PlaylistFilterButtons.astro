@@ -1,0 +1,14 @@
+---
+type Props = {
+    filterNames : [string, string, string]
+}
+
+const { filterNames } = Astro.props
+---
+
+
+<div class="space-x-1">
+    <button class="hover:bg-[#555] px-3 py-1 rounded-2xl bg-[#333] text-sm "> {filterNames[0]} </button>
+    <button class="hover:bg-[#555] px-3 py-1 rounded-2xl bg-[#333] text-sm"> {filterNames[1]} </button>
+    <button class="hover:bg-[#555] px-3 py-1 rounded-2xl bg-[#333] text-sm"> {filterNames[2]} </button>
+</div>

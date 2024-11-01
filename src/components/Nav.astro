@@ -1,0 +1,43 @@
+---
+import Bell from "@/icons/Bell.astro";
+import Donwload from "@/icons/Donwload.astro";
+import Search from "@/icons/Search.astro";
+import Spotify from "@/icons/Spotify.astro";
+import Explore from "@/icons/Explore.astro";
+import Home from "@/icons/Home.astro";
+---
+
+<header class="w-full flex place-content-center  [grid-area:header] bg-black ">
+    <nav class="w-full flex justify-between items-center">
+        <a href="/" class="ml-6">
+            <Spotify/>
+        </a>
+        <div class="w-[490px] h-full  rounded-full flex items-center gap-2 ml-[360px]">
+            <a href="/" class="bg-[#1f1f1f] w-[54.2px] h-12 rounded-full flex items-center justify-center"><Home/></a>
+            <form action="" class="flex items-center bg-[#1f1f1f] rounded-full justify-between w-full h-full py-3">
+                <div class="flex items-center">
+                    <button class="px-3"><Search size="24" color="#909090"/></button>
+                    <input type="text" placeholder="¿Qué quieres reproducir?" class="bg-transparent h-full w-[200px]">
+                </div>
+                <button class="px-4 border-l border-l-[#909090]"><Explore/></button>
+            </form>
+        </div>
+        <section class="flex gap-x-2 items-center">
+            <button class=" h-5 py-4 px-4 flex justify-center text-sm bg-[#f6f6f6] text-neutral-800 items-center rounded-2xl font-semibold">
+                Explorar Premium
+            </button>
+            <button class="h-5 py-4 px-4  flex items-center rounded-2xl gap-x-2">
+                <span class="">
+                    <Donwload/>
+                </span>
+                Instalar aplicacion
+            </button>
+            <button class="w-8 h-8 rounded-full  flex justify-center items-center">
+                <Bell/>
+            </button>
+            <button class="w-12 h-12 rounded-full bg-[#1f1f1f]  flex justify-center items-center">
+                <div class="w-8 h-8 bg-[#cccc] rounded-full"></div>
+            </button>
+        </section> 
+    </nav>
+</header>

@@ -1,0 +1,31 @@
+---
+import Device from "@/icons/Device.astro";
+import Microphone from "@/icons/Microphone.astro";
+import PlayerMiniature from "@/icons/PlayerMiniature.astro";
+import Queue from "@/icons/Queue.astro";
+import { VolumeControl } from "./VolumeControl";
+import FullScreen from "@/icons/FullScreen.astro";
+import ViewListening from "@/icons/ViewListening.astro";
+---
+
+<div class="flex gap-x-4">
+    <button>
+        <ViewListening/>
+    </button>
+    <button>
+        <Microphone />
+    </button>
+    <button>
+        <Queue />
+    </button>
+    <button>
+        <Device />
+    </button>
+    <VolumeControl /> 
+    <button>
+        <PlayerMiniature />
+    </button>
+    <button>
+        <FullScreen />
+    </button>
+</div>

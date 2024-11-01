@@ -6,10 +6,12 @@ import SideMenuItem from "./SideMenuItem.astro"
 import SideMenuCard from "./SideMenuCard.astro"
 
 import { playlists } from "@/lib/data"
+import PlaylistFilterButtons from "./PlaylistFilterButtons.astro"
+import SearcherAndFilters from "./SearcherAndFilters.astro"
 ---
 
-<nav class="flex flex-col flex-1 gap-2">
-  <div class="bg-zinc-900 rounded-lg p-2">
+<nav class="flex flex-col h-full gap-2">
+  <!-- <div class="bg-zinc-900 rounded-lg p-2">
     <ul>
       <SideMenuItem href="/">
         <HomeIcon />
@@ -21,14 +23,15 @@ import { playlists } from "@/lib/data"
          Buscar
       </SideMenuItem>
     </ul>
-  </div>
-
+  </div> -->
   <div class="bg-zinc-900 rounded-lg p-2 flex-1">
     <ul>
       <SideMenuItem href="/">
         <LibraryIcon />
-         Tu biblioteca
+        Tu biblioteca
       </SideMenuItem>
+      <PlaylistFilterButtons filterNames={["Playlist", "Artistas", "Álbumes" ]}/>
+      <SearcherAndFilters/>
 
       {playlists.map((playlist) => <SideMenuCard playlist={playlist} />)}
     </ul>

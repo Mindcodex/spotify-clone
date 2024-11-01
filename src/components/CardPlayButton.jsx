@@ -1,30 +1,24 @@
 import { Pause, Play } from "./Player"
 import { usePlayerStore } from '@/store/playerStore'
+import { usePlayer } from "./usePlayer"
+import { playlists, songs } from "@/lib/data"
 
-export function CardPlayButton ({ id, size = 'small' }) {
-  const {
-    currentMusic,
-    isPlaying,
-    setIsPlaying,
-    setCurrentMusic
-  } = usePlayerStore(state => state)
-
-  const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id === id
+export function CardPlayButton({ id, size = 'small' }) {
+  const { currentMusic, setCurrentMusic, setIsPlaying, isPlaying } = usePlayer()
+  const isPlayingPlaylist = isPlaying && currentMusic?.currentPlaylistInfo.id === id
 
   const handleClick = () => {
+    console.log(playlists[Number(id) - 1])
     if (isPlayingPlaylist) {
       setIsPlaying(false)
       return
     }
-
-    fetch(`/api/get-info-playlist.json?id=${id}`)
-      .then(res => res.json())
-      .then(data => {
-        const { songs, playlist } = data
-
-        setIsPlaying(true)
-        setCurrentMusic({ songs, playlist, song: songs[0] })
-      })
+    setCurrentMusic({
+      currentPlaylistInfo: playlists[Number(id) - 1],
+      currentSong: songs.filter(song => song.albumId == id)[0],
+      currentPlaylistMusic: songs.filter(song=> song.albumId == id)
+    })
+    setIsPlaying(true)
   }
 
   const iconClassName = size === 'small' ? 'w-4 h-4' : 'w-5 h-5'
